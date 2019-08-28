@@ -242,6 +242,7 @@
             // 
             this.urlBar.Name = "urlBar";
             this.urlBar.Size = new System.Drawing.Size(300, 25);
+            this.urlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBar_KeyDown);
             // 
             // toolStripButton5
             // 

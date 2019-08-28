@@ -42,5 +42,12 @@ namespace WebBrowser.UI
             webBrowser1.Navigate(urlBar.ToString());
         }
 
+         private void urlBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                webBrowser1.Navigate(urlBar.ToString());
+            }
+        }
     }
 }
