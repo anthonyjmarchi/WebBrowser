@@ -50,6 +50,7 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.urlBar = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -57,7 +58,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.urlBar = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -238,6 +238,11 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(40, 22);
             this.toolStripLabel4.Text = "Home";
             // 
+            // urlBar
+            // 
+            this.urlBar.Name = "urlBar";
+            this.urlBar.Size = new System.Drawing.Size(300, 25);
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -299,12 +304,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(744, 423);
             this.tabControl1.TabIndex = 2;
-            // 
-            // urlBar
-            // 
-            this.urlBar.Name = "urlBar";
-            this.urlBar.Size = new System.Drawing.Size(300, 25);
-            this.urlBar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlBar_KeyPress);
             // 
             // mainForm
             // 

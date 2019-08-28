@@ -42,9 +42,5 @@ namespace WebBrowser.UI
             webBrowser1.Navigate(urlBar.ToString());
         }
 
-        private void urlBar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            webBrowser1.Navigate(urlBar.ToString());
-        }
     }
 }
