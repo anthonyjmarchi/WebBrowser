@@ -32,9 +32,19 @@ namespace WebBrowser.UI
 
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        private void toolStripLabel5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(urlBar.ToString());
+        }
+
+        private void urlBar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            webBrowser1.Navigate(urlBar.ToString());
         }
     }
 }
