@@ -17,9 +17,21 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
+        private void userControlTab1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        public void displayWebsite(String url)
+        {
+            //webBrowser1.Navigate(urlBar.ToString());
+        }
+
         private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,27 +39,9 @@ namespace WebBrowser.UI
             DialogResult res = MessageBox.Show("Developed by: \nAnthony Marchi \nParma, Italy \n\nStudent ID: \najm151 ", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
+        private void exitWebBrowserToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void toolStripLabel5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            webBrowser1.Navigate(urlBar.ToString());
-        }
-
-         private void urlBar_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                webBrowser1.Navigate(urlBar.ToString());
-            }
+            Application.Exit();
         }
     }
 }
