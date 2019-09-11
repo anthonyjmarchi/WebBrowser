@@ -133,10 +133,10 @@
             // 
             this.urlBar.BackColor = System.Drawing.SystemColors.Window;
             this.urlBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.urlBar.Font = new System.Drawing.Font("Segoe UI Light", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.urlBar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.urlBar.Name = "urlBar";
             this.urlBar.Size = new System.Drawing.Size(300, 25);
-            this.urlBar.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.urlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBar_KeyDown);
             this.urlBar.Click += new System.EventHandler(this.urlBar_Click);
             // 
             // toolStripLabel5
@@ -144,7 +144,6 @@
             this.toolStripLabel5.Name = "toolStripLabel5";
             this.toolStripLabel5.Size = new System.Drawing.Size(22, 22);
             this.toolStripLabel5.Text = "Go";
-            this.toolStripLabel5.Click += new System.EventHandler(this.toolStripLabel5_Click);
             // 
             // toolStripButton5
             // 
@@ -174,10 +173,10 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 25);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(787, 423);
+            this.webBrowser1.Size = new System.Drawing.Size(787, 448);
             this.webBrowser1.TabIndex = 3;
             // 
             // userControlTab
@@ -186,8 +185,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.webBrowser1);
             this.Name = "userControlTab";
             this.Size = new System.Drawing.Size(787, 448);
             this.toolStrip1.ResumeLayout(false);

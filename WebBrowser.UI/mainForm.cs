@@ -17,18 +17,6 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-        private void userControlTab1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        public void displayWebsite(String url)
-        {
-            //webBrowser1.Navigate(urlBar.ToString());
-        }
-
         private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

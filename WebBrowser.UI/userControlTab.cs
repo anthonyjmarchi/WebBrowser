@@ -17,37 +17,22 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-     
-
-        private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)
         {
-          
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+            webBrowser1.Navigate(urlBar.ToString());
         }
 
         private void urlBar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void toolStripLabel5_Click(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            //mainForm a = new mainForm();
-            //a.displayWebsite(userControlTab.urlBar.ToString());
+         
         }
 
         private void urlBar_KeyDown(object sender, KeyEventArgs e)
         {
-       
+            if (e.KeyCode == Keys.Enter)
+            {
+                webBrowser1.Navigate(urlBar.ToString());
+            }
         }
     }
 }

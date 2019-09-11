@@ -42,7 +42,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.userControlTab1 = new WebBrowser.UI.userControlTab();
             this.menuStrip1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +141,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.userControlTab1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -157,6 +160,16 @@
             this.tabControl1.Size = new System.Drawing.Size(754, 436);
             this.tabControl1.TabIndex = 4;
             // 
+            // userControlTab1
+            // 
+            this.userControlTab1.AutoSize = true;
+            this.userControlTab1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.userControlTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTab1.Location = new System.Drawing.Point(3, 3);
+            this.userControlTab1.Name = "userControlTab1";
+            this.userControlTab1.Size = new System.Drawing.Size(740, 404);
+            this.userControlTab1.TabIndex = 0;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -168,6 +181,8 @@
             this.Text = "aBrowser";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
+        private userControlTab userControlTab1;
     }
 }
