@@ -12,10 +12,14 @@ namespace WebBrowser.UI
 {
     public partial class userControlTab : UserControl
     {
-        public userControlTab()
+        public Stack<string> backStack = new Stack<string>();
+        public Stack<string> forwardStack = new Stack<string>();
+        
+            public userControlTab()
         {
             InitializeComponent();
         }
+
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -34,5 +38,11 @@ namespace WebBrowser.UI
                 webBrowser1.Navigate(urlBar.ToString());
             }
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(urlBar.ToString());
+        }
+
     }
 }
