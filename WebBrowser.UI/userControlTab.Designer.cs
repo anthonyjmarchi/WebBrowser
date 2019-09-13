@@ -136,7 +136,6 @@
             // 
             this.urlBar.BackColor = System.Drawing.SystemColors.Window;
             this.urlBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.urlBar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.urlBar.Name = "urlBar";
             this.urlBar.Size = new System.Drawing.Size(300, 25);
             this.urlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBar_KeyDown);
@@ -181,6 +180,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(787, 448);
             this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // userControlTab
             // 

@@ -161,6 +161,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(754, 436);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabControl1_KeyDown);
             // 
             // userControlTab1
             // 
@@ -179,8 +180,11 @@
             this.ClientSize = new System.Drawing.Size(754, 460);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.Name = "mainForm";
             this.Text = "aBrowser";
+            this.Load += new System.EventHandler(this.mainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mainForm_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -205,7 +209,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl1;
         private userControlTab userControlTab1;
+        public System.Windows.Forms.TabControl tabControl1;
     }
 }

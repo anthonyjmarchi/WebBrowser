@@ -45,5 +45,29 @@ namespace WebBrowser.UI
         {
             tabControl1.TabPages.Remove(tabControl1.SelectedTab);
         }
+
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.T)
+            {
+                TabPage newPage = new TabPage("New Page");
+                userControlTab a = new userControlTab();
+                a.Dock = DockStyle.Fill;
+                tabControl1.TabPages.Add(newPage);
+                newPage.Controls.Add(a);
+            }
+        }
+
     }
 }
+

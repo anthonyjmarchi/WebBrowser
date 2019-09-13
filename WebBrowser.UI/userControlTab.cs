@@ -25,7 +25,8 @@ namespace WebBrowser.UI
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(urlBar.ToString());
-          
+            
+
         }
 
         private void urlBar_Click(object sender, EventArgs e)
@@ -40,7 +41,6 @@ namespace WebBrowser.UI
                 webBrowser1.Navigate(urlBar.ToString());
                 backStack.Push(urlBar.ToString());
             }
-        
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -80,6 +80,12 @@ namespace WebBrowser.UI
                 urlBar.Text = a;
             }
        
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+   
         }
     }
 }
