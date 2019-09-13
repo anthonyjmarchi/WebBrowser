@@ -25,6 +25,7 @@ namespace WebBrowser.UI
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(urlBar.ToString());
+          
         }
 
         private void urlBar_Click(object sender, EventArgs e)

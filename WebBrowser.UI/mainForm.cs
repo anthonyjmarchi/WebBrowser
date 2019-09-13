@@ -31,5 +31,19 @@ namespace WebBrowser.UI
         {
             Application.Exit();
         }
+
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage newPage = new TabPage("New Page");
+            userControlTab a = new userControlTab();
+            a.Dock = DockStyle.Fill;
+            tabControl1.TabPages.Add(newPage);
+            newPage.Controls.Add(a);
+        }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+        }
     }
 }
