@@ -62,10 +62,10 @@
       <DependentUpon>BookmarkDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="historyDataset.Designer.cs">
+    <Compile Include="HistoryDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>historyDataset.xsd</DependentUpon>
+      <DependentUpon>HistoryDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -108,16 +108,16 @@
     <None Include="BookmarkDataset.xss">
       <DependentUpon>BookmarkDataset.xsd</DependentUpon>
     </None>
-    <None Include="historyDataset.xsc">
-      <DependentUpon>historyDataset.xsd</DependentUpon>
+    <None Include="HistoryDataset.xsc">
+      <DependentUpon>HistoryDataset.xsd</DependentUpon>
     </None>
-    <None Include="historyDataset.xsd">
+    <None Include="HistoryDataset.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>historyDataset.Designer.cs</LastGenOutput>
+      <LastGenOutput>HistoryDataset.Designer.cs</LastGenOutput>
     </None>
-    <None Include="historyDataset.xss">
-      <DependentUpon>historyDataset.xsd</DependentUpon>
+    <None Include="HistoryDataset.xss">
+      <DependentUpon>HistoryDataset.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

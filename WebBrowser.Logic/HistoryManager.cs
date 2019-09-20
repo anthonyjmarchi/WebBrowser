@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebBrowser.Data.historyDatasetTableAdapters;
+using WebBrowser.Data.HistoryDatasetTableAdapters;
 
 namespace WebBrowser.Logic
 {
@@ -12,7 +12,7 @@ namespace WebBrowser.Logic
         public static void AddHistoryItem(HistoryItem item)
         {
             var adapter = new HistoryTableAdapter();
-            adapter.Insert(item.url, item.title, item.date);
+            adapter.Insert(item.URL, item.Title, item.Date);
         }
 
         public static List<HistoryItem> GetHistoryItems()
@@ -24,14 +24,14 @@ namespace WebBrowser.Logic
             foreach(var row in rows)
             {
                 var item = new HistoryItem();
-                item.url = row.URL;
-                item.title = row.Title;
-                item.date = row.Date;
-                item.Id = row.Id;
 
+                item.Title = row.Title;
+                item.URL = row.URL;
+                item.Date = row.Date;
                 results.Add(item);
             }
             return results;
         }
     }
 }
+
