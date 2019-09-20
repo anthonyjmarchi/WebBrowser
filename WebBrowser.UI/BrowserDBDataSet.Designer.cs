@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WebBrowser.Data {
+namespace WebBrowser.UI {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace WebBrowser.Data {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BookmarkDataset")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BrowserDBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BookmarkDataset : global::System.Data.DataSet {
+    public partial class BrowserDBDataSet : global::System.Data.DataSet {
         
-        private BookmarksDataTable tableBookmarks;
+        private HistoryDataTable tableHistory;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BookmarkDataset() {
+        public BrowserDBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WebBrowser.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected BookmarkDataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BrowserDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace WebBrowser.Data {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Bookmarks"] != null)) {
-                    base.Tables.Add(new BookmarksDataTable(ds.Tables["Bookmarks"]));
+                if ((ds.Tables["History"] != null)) {
+                    base.Tables.Add(new HistoryDataTable(ds.Tables["History"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WebBrowser.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BookmarksDataTable Bookmarks {
+        public HistoryDataTable History {
             get {
-                return this.tableBookmarks;
+                return this.tableHistory;
             }
         }
         
@@ -127,7 +127,7 @@ namespace WebBrowser.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BookmarkDataset cln = ((BookmarkDataset)(base.Clone()));
+            BrowserDBDataSet cln = ((BrowserDBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace WebBrowser.Data {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Bookmarks"] != null)) {
-                    base.Tables.Add(new BookmarksDataTable(ds.Tables["Bookmarks"]));
+                if ((ds.Tables["History"] != null)) {
+                    base.Tables.Add(new HistoryDataTable(ds.Tables["History"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WebBrowser.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBookmarks = ((BookmarksDataTable)(base.Tables["Bookmarks"]));
+            this.tableHistory = ((HistoryDataTable)(base.Tables["History"]));
             if ((initTable == true)) {
-                if ((this.tableBookmarks != null)) {
-                    this.tableBookmarks.InitVars();
+                if ((this.tableHistory != null)) {
+                    this.tableHistory.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace WebBrowser.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BookmarkDataset";
+            this.DataSetName = "BrowserDBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BookmarkDataset.xsd";
+            this.Namespace = "http://tempuri.org/BrowserDBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBookmarks = new BookmarksDataTable();
-            base.Tables.Add(this.tableBookmarks);
+            this.tableHistory = new HistoryDataTable();
+            base.Tables.Add(this.tableHistory);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeBookmarks() {
+        private bool ShouldSerializeHistory() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace WebBrowser.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BookmarkDataset ds = new BookmarkDataset();
+            BrowserDBDataSet ds = new BrowserDBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace WebBrowser.Data {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void BookmarksRowChangeEventHandler(object sender, BookmarksRowChangeEvent e);
+        public delegate void HistoryRowChangeEventHandler(object sender, HistoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BookmarksDataTable : global::System.Data.TypedTableBase<BookmarksRow> {
+        public partial class HistoryDataTable : global::System.Data.TypedTableBase<HistoryRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -285,10 +285,12 @@ namespace WebBrowser.Data {
             
             private global::System.Data.DataColumn columnTitle;
             
+            private global::System.Data.DataColumn columnDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksDataTable() {
-                this.TableName = "Bookmarks";
+            public HistoryDataTable() {
+                this.TableName = "History";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +298,7 @@ namespace WebBrowser.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal BookmarksDataTable(global::System.Data.DataTable table) {
+            internal HistoryDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +315,7 @@ namespace WebBrowser.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected BookmarksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HistoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -344,6 +346,14 @@ namespace WebBrowser.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -353,54 +363,55 @@ namespace WebBrowser.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRow this[int index] {
+            public HistoryRow this[int index] {
                 get {
-                    return ((BookmarksRow)(this.Rows[index]));
+                    return ((HistoryRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BookmarksRowChangeEventHandler BookmarksRowChanging;
+            public event HistoryRowChangeEventHandler HistoryRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BookmarksRowChangeEventHandler BookmarksRowChanged;
+            public event HistoryRowChangeEventHandler HistoryRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BookmarksRowChangeEventHandler BookmarksRowDeleting;
+            public event HistoryRowChangeEventHandler HistoryRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event BookmarksRowChangeEventHandler BookmarksRowDeleted;
+            public event HistoryRowChangeEventHandler HistoryRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddBookmarksRow(BookmarksRow row) {
+            public void AddHistoryRow(HistoryRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRow AddBookmarksRow(string URL, string Title) {
-                BookmarksRow rowBookmarksRow = ((BookmarksRow)(this.NewRow()));
+            public HistoryRow AddHistoryRow(string URL, string Title, System.DateTime Date) {
+                HistoryRow rowHistoryRow = ((HistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         URL,
-                        Title};
-                rowBookmarksRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBookmarksRow);
-                return rowBookmarksRow;
+                        Title,
+                        Date};
+                rowHistoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHistoryRow);
+                return rowHistoryRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRow FindById(int Id) {
-                return ((BookmarksRow)(this.Rows.Find(new object[] {
+            public HistoryRow FindById(int Id) {
+                return ((HistoryRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BookmarksDataTable cln = ((BookmarksDataTable)(base.Clone()));
+                HistoryDataTable cln = ((HistoryDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,7 +419,7 @@ namespace WebBrowser.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BookmarksDataTable();
+                return new HistoryDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -417,6 +428,7 @@ namespace WebBrowser.Data {
                 this.columnId = base.Columns["Id"];
                 this.columnURL = base.Columns["URL"];
                 this.columnTitle = base.Columns["Title"];
+                this.columnDate = base.Columns["Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +440,8 @@ namespace WebBrowser.Data {
                 base.Columns.Add(this.columnURL);
                 this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitle);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -439,33 +453,34 @@ namespace WebBrowser.Data {
                 this.columnURL.AllowDBNull = false;
                 this.columnURL.MaxLength = 50;
                 this.columnTitle.AllowDBNull = false;
-                this.columnTitle.MaxLength = 20;
+                this.columnTitle.MaxLength = 50;
+                this.columnDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRow NewBookmarksRow() {
-                return ((BookmarksRow)(this.NewRow()));
+            public HistoryRow NewHistoryRow() {
+                return ((HistoryRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BookmarksRow(builder);
+                return new HistoryRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BookmarksRow);
+                return typeof(HistoryRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BookmarksRowChanged != null)) {
-                    this.BookmarksRowChanged(this, new BookmarksRowChangeEvent(((BookmarksRow)(e.Row)), e.Action));
+                if ((this.HistoryRowChanged != null)) {
+                    this.HistoryRowChanged(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -473,8 +488,8 @@ namespace WebBrowser.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BookmarksRowChanging != null)) {
-                    this.BookmarksRowChanging(this, new BookmarksRowChangeEvent(((BookmarksRow)(e.Row)), e.Action));
+                if ((this.HistoryRowChanging != null)) {
+                    this.HistoryRowChanging(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +497,8 @@ namespace WebBrowser.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BookmarksRowDeleted != null)) {
-                    this.BookmarksRowDeleted(this, new BookmarksRowChangeEvent(((BookmarksRow)(e.Row)), e.Action));
+                if ((this.HistoryRowDeleted != null)) {
+                    this.HistoryRowDeleted(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,14 +506,14 @@ namespace WebBrowser.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BookmarksRowDeleting != null)) {
-                    this.BookmarksRowDeleting(this, new BookmarksRowChangeEvent(((BookmarksRow)(e.Row)), e.Action));
+                if ((this.HistoryRowDeleting != null)) {
+                    this.HistoryRowDeleting(this, new HistoryRowChangeEvent(((HistoryRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveBookmarksRow(BookmarksRow row) {
+            public void RemoveHistoryRow(HistoryRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -507,7 +522,7 @@ namespace WebBrowser.Data {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BookmarkDataset ds = new BookmarkDataset();
+                BrowserDBDataSet ds = new BrowserDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -525,7 +540,7 @@ namespace WebBrowser.Data {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BookmarksDataTable";
+                attribute2.FixedValue = "HistoryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -569,25 +584,25 @@ namespace WebBrowser.Data {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BookmarksRow : global::System.Data.DataRow {
+        public partial class HistoryRow : global::System.Data.DataRow {
             
-            private BookmarksDataTable tableBookmarks;
+            private HistoryDataTable tableHistory;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal BookmarksRow(global::System.Data.DataRowBuilder rb) : 
+            internal HistoryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBookmarks = ((BookmarksDataTable)(this.Table));
+                this.tableHistory = ((HistoryDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableBookmarks.IdColumn]));
+                    return ((int)(this[this.tableHistory.IdColumn]));
                 }
                 set {
-                    this[this.tableBookmarks.IdColumn] = value;
+                    this[this.tableHistory.IdColumn] = value;
                 }
             }
             
@@ -595,10 +610,10 @@ namespace WebBrowser.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string URL {
                 get {
-                    return ((string)(this[this.tableBookmarks.URLColumn]));
+                    return ((string)(this[this.tableHistory.URLColumn]));
                 }
                 set {
-                    this[this.tableBookmarks.URLColumn] = value;
+                    this[this.tableHistory.URLColumn] = value;
                 }
             }
             
@@ -606,10 +621,21 @@ namespace WebBrowser.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Title {
                 get {
-                    return ((string)(this[this.tableBookmarks.TitleColumn]));
+                    return ((string)(this[this.tableHistory.TitleColumn]));
                 }
                 set {
-                    this[this.tableBookmarks.TitleColumn] = value;
+                    this[this.tableHistory.TitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHistory.DateColumn]));
+                }
+                set {
+                    this[this.tableHistory.DateColumn] = value;
                 }
             }
         }
@@ -618,22 +644,22 @@ namespace WebBrowser.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class BookmarksRowChangeEvent : global::System.EventArgs {
+        public class HistoryRowChangeEvent : global::System.EventArgs {
             
-            private BookmarksRow eventRow;
+            private HistoryRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRowChangeEvent(BookmarksRow row, global::System.Data.DataRowAction action) {
+            public HistoryRowChangeEvent(HistoryRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public BookmarksRow Row {
+            public HistoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -649,7 +675,7 @@ namespace WebBrowser.Data {
         }
     }
 }
-namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
+namespace WebBrowser.UI.BrowserDBDataSetTableAdapters {
     
     
     /// <summary>
@@ -661,7 +687,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BookmarksTableAdapter : global::System.ComponentModel.Component {
+    public partial class HistoryTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -675,7 +701,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BookmarksTableAdapter() {
+        public HistoryTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -772,37 +798,43 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Bookmarks";
+            tableMapping.DataSetTable = "History";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("URL", "URL");
             tableMapping.ColumnMappings.Add("Title", "Title");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Bookmarks] WHERE (([Id] = @Original_Id) AND ([URL] = @Original_URL) " +
-                "AND ([Title] = @Original_Title))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[History] WHERE (([Id] = @Original_Id) AND ([URL] = @Original_U" +
+                "RL) AND ([Title] = @Original_Title) AND ([Date] = @Original_Date))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_URL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Bookmarks] ([URL], [Title]) VALUES (@URL, @Title);\r\nSELECT Id, URL, " +
-                "Title FROM Bookmarks WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[History] ([URL], [Title], [Date]) VALUES (@URL, @Title, @Date)" +
+                ";\r\nSELECT Id, URL, Title, Date FROM History WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Bookmarks] SET [URL] = @URL, [Title] = @Title WHERE (([Id] = @Original_Id" +
-                ") AND ([URL] = @Original_URL) AND ([Title] = @Original_Title));\r\nSELECT Id, URL," +
-                " Title FROM Bookmarks WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[History] SET [URL] = @URL, [Title] = @Title, [Date] = @Date WHERE (" +
+                "([Id] = @Original_Id) AND ([URL] = @Original_URL) AND ([Title] = @Original_Title" +
+                ") AND ([Date] = @Original_Date));\r\nSELECT Id, URL, Title, Date FROM History WHER" +
+                "E (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_URL", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -810,7 +842,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WebBrowser.Data.Properties.Settings.Default.browserDatabaseConnectionString;
+            this._connection.ConnectionString = global::WebBrowser.UI.Properties.Settings.Default.BrowserDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,7 +851,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Bookmarks.*\r\nFROM            Bookmarks";
+            this._commandCollection[0].CommandText = "SELECT Id, URL, Title, Date FROM dbo.History";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -827,7 +859,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BookmarkDataset.BookmarksDataTable dataTable) {
+        public virtual int Fill(BrowserDBDataSet.HistoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -840,9 +872,9 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BookmarkDataset.BookmarksDataTable GetData() {
+        public virtual BrowserDBDataSet.HistoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BookmarkDataset.BookmarksDataTable dataTable = new BookmarkDataset.BookmarksDataTable();
+            BrowserDBDataSet.HistoryDataTable dataTable = new BrowserDBDataSet.HistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -850,15 +882,15 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BookmarkDataset.BookmarksDataTable dataTable) {
+        public virtual int Update(BrowserDBDataSet.HistoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BookmarkDataset dataSet) {
-            return this.Adapter.Update(dataSet, "Bookmarks");
+        public virtual int Update(BrowserDBDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "History");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -880,7 +912,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_URL, string Original_Title) {
+        public virtual int Delete(int Original_Id, string Original_URL, string Original_Title, System.DateTime Original_Date) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_URL == null)) {
                 throw new global::System.ArgumentNullException("Original_URL");
@@ -894,6 +926,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Title));
             }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -914,7 +947,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string URL, string Title) {
+        public virtual int Insert(string URL, string Title, System.DateTime Date) {
             if ((URL == null)) {
                 throw new global::System.ArgumentNullException("URL");
             }
@@ -927,6 +960,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Title));
             }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Date));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -947,7 +981,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string URL, string Title, int Original_Id, string Original_URL, string Original_Title, int Id) {
+        public virtual int Update(string URL, string Title, System.DateTime Date, int Original_Id, string Original_URL, string Original_Title, System.DateTime Original_Date, int Id) {
             if ((URL == null)) {
                 throw new global::System.ArgumentNullException("URL");
             }
@@ -960,20 +994,22 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Title));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
             if ((Original_URL == null)) {
                 throw new global::System.ArgumentNullException("Original_URL");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_URL));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_URL));
             }
             if ((Original_Title == null)) {
                 throw new global::System.ArgumentNullException("Original_Title");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Title));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Title));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -994,8 +1030,8 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string URL, string Title, int Original_Id, string Original_URL, string Original_Title) {
-            return this.Update(URL, Title, Original_Id, Original_URL, Original_Title, Original_Id);
+        public virtual int Update(string URL, string Title, System.DateTime Date, int Original_Id, string Original_URL, string Original_Title, System.DateTime Original_Date) {
+            return this.Update(URL, Title, Date, Original_Id, Original_URL, Original_Title, Original_Date, Original_Id);
         }
     }
     
@@ -1011,7 +1047,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private BookmarksTableAdapter _bookmarksTableAdapter;
+        private HistoryTableAdapter _historyTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1033,12 +1069,12 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public BookmarksTableAdapter BookmarksTableAdapter {
+        public HistoryTableAdapter HistoryTableAdapter {
             get {
-                return this._bookmarksTableAdapter;
+                return this._historyTableAdapter;
             }
             set {
-                this._bookmarksTableAdapter = value;
+                this._historyTableAdapter = value;
             }
         }
         
@@ -1061,9 +1097,9 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._bookmarksTableAdapter != null) 
-                            && (this._bookmarksTableAdapter.Connection != null))) {
-                    return this._bookmarksTableAdapter.Connection;
+                if (((this._historyTableAdapter != null) 
+                            && (this._historyTableAdapter.Connection != null))) {
+                    return this._historyTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1078,7 +1114,7 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._bookmarksTableAdapter != null)) {
+                if ((this._historyTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1090,14 +1126,14 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(BookmarkDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BrowserDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bookmarksTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Bookmarks.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._historyTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.History.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._bookmarksTableAdapter.Update(updatedRows));
+                    result = (result + this._historyTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1109,13 +1145,13 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(BookmarkDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BrowserDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bookmarksTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Bookmarks.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._historyTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.History.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._bookmarksTableAdapter.Update(addedRows));
+                    result = (result + this._historyTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1127,13 +1163,13 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(BookmarkDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BrowserDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._bookmarksTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Bookmarks.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._historyTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.History.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._bookmarksTableAdapter.Update(deletedRows));
+                    result = (result + this._historyTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1169,15 +1205,15 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(BookmarkDataset dataSet) {
+        public virtual int UpdateAll(BrowserDBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._bookmarksTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._bookmarksTableAdapter.Connection) == false))) {
+            if (((this._historyTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._historyTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1213,13 +1249,13 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._bookmarksTableAdapter != null)) {
-                    revertConnections.Add(this._bookmarksTableAdapter, this._bookmarksTableAdapter.Connection);
-                    this._bookmarksTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._bookmarksTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._bookmarksTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._bookmarksTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._bookmarksTableAdapter.Adapter);
+                if ((this._historyTableAdapter != null)) {
+                    revertConnections.Add(this._historyTableAdapter, this._historyTableAdapter.Connection);
+                    this._historyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._historyTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._historyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._historyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._historyTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1280,9 +1316,9 @@ namespace WebBrowser.Data.BookmarkDatasetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._bookmarksTableAdapter != null)) {
-                    this._bookmarksTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._bookmarksTableAdapter]));
-                    this._bookmarksTableAdapter.Transaction = null;
+                if ((this._historyTableAdapter != null)) {
+                    this._historyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._historyTableAdapter]));
+                    this._historyTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

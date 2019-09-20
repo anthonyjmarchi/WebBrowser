@@ -46,6 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookmarkManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmarkManager.Designer.cs">
+      <DependentUpon>BookmarkManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowserDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryManagerForm.Designer.cs">
+      <DependentUpon>HistoryManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +77,12 @@
     <Compile Include="userControlTab.Designer.cs">
       <DependentUpon>userControlTab.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookmarkManager.resx">
+      <DependentUpon>BookmarkManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryManagerForm.resx">
+      <DependentUpon>HistoryManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +98,17 @@
     <EmbeddedResource Include="userControlTab.resx">
       <DependentUpon>userControlTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BrowserDBDataSet.xsc">
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BrowserDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BrowserDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BrowserDBDataSet.xss">
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

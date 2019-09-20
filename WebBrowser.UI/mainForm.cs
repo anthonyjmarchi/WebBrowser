@@ -70,6 +70,17 @@ namespace WebBrowser.UI
             }
         }
 
+        private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryManagerForm historyFormThing = new HistoryManagerForm();
+            historyFormThing.ShowDialog();
+
+        }
+
+        private void userControlTab1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

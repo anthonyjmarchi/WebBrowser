@@ -25,6 +25,7 @@ namespace WebBrowser.UI
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(urlBar.ToString());
+            backStack.Push(urlBar.ToString());
         }
 
         private void urlBar_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace WebBrowser.UI
 
         private void urlBar_KeyDown(object sender, KeyEventArgs e)
         {
+        
             if (e.KeyCode == Keys.Enter)
             {
                 webBrowser1.Navigate(urlBar.ToString());
@@ -41,6 +43,10 @@ namespace WebBrowser.UI
             }
         }
 
+  
+
+
+        //Refresh Button
         private void toolStripButton3_Click(object sender, EventArgs e)
         {   
             webBrowser1.Navigate(urlBar.ToString());
@@ -70,6 +76,7 @@ namespace WebBrowser.UI
             if (forwardStack.Count == 0)
             {
                 webBrowser1.Navigate(urlBar.ToString());
+
             }
             else {
                 backStack.Push(urlBar.ToString());
@@ -82,8 +89,13 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            WebBrowser.Logic.HistoryItem a = new Logic.HistoryItem();
 
-   
+            a.URL = urlBar.ToString();
+            a.Title = webBrowser1.DocumentTitle;
+            a.Date = DateTime.Now;
+
+            WebBrowser.Logic.HistoryManager.AddHistoryItem(a);
         }
     }
 }
