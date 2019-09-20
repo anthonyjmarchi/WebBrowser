@@ -97,5 +97,22 @@ namespace WebBrowser.UI
 
             WebBrowser.Logic.HistoryManager.AddHistoryItem(a);
         }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            List<WebBrowser.Logic.BookmarkItem> newList = new List<Logic.BookmarkItem>();
+            List<String> stringList = new List<String>();
+            foreach (WebBrowser.Logic.BookmarkItem item in newList)
+            {
+                stringList.Add(item.title);
+            }
+            if (!stringList.Contains(webBrowser1.DocumentTitle)) 
+            {
+                WebBrowser.Logic.BookmarkItem a = new WebBrowser.Logic.BookmarkItem();
+                a.title = webBrowser1.DocumentTitle;
+                a.url = urlBar.ToString();
+                WebBrowser.Logic.BookmarkManager.AddBookmarkItem(a);
+            }
+        }
     }
 }
