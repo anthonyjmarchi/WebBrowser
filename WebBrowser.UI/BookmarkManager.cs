@@ -21,8 +21,14 @@ namespace WebBrowser.UI
         {
             foreach (WebBrowser.Logic.BookmarkItem item in WebBrowser.Logic.BookmarkManager.GetBookmarkItems())
             {
-                listBox1.Items.Add(item.title);
+                listBox1.Items.Add(item.title + "(" + item.url + ")");
             }
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    
     }
 }

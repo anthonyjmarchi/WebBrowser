@@ -31,7 +31,7 @@ namespace WebBrowser.UI
         {
             foreach (WebBrowser.Logic.HistoryItem item in WebBrowser.Logic.HistoryManager.GetHistoryItems())
             {
-                listBox1.Items.Add("[" + item.Date + "]" + " " + item.Title + " " + "(" + item.URL + ")");
+                listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
             } 
            
           

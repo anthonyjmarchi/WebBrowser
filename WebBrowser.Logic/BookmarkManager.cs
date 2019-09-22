@@ -5,15 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 using WebBrowser.Data.BrowserDBDataSetTableAdapters;
 
+
 namespace WebBrowser.Logic
 {
     public class BookmarkManager
     {
         public static void AddBookmarkItem(BookmarkItem item)
         {
-            var adapter = new WebBrowser.Data.BrowserDBDataSetTableAdapters.BookmarkTableAdapter();
-            adapter.Insert(item.url, item.title);
+            if (CheckIfDuplicate(item))
+            {
+                var adapter = new WebBrowser.Data.BrowserDBDataSetTableAdapters.BookmarkTableAdapter();
+                adapter.Insert(item.url, item.title);
+            }
         }
+
+
+        public static Boolean CheckIfDuplicate(BookmarkItem item)
+        {
+            Boolean value = true;
+            var currentItems = new List<BookmarkItem>();
+            currentItems = GetBookmarkItems();
+            foreach (BookmarkItem row in currentItems)
+            {
+                String urlFirst = row.url.ToString().Trim();
+                String urlSecond = item.url.ToString();
+                if (urlFirst.Equals(urlSecond)) 
+                {
+                    value = false;
+                }
+            }
+            return value;
+        }
+
 
         public static List<BookmarkItem> GetBookmarkItems()
 
