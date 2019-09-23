@@ -44,7 +44,12 @@
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -125,6 +130,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripLabel4
             // 
@@ -182,6 +188,41 @@
             this.webBrowser1.Size = new System.Drawing.Size(787, 448);
             this.webBrowser1.TabIndex = 3;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.webBrowser1.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.webBrowser1_Navigating);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 422);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(787, 26);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 20);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.toolStripProgressBar1.Click += new System.EventHandler(this.toolStripProgressBar1_Click);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
             // userControlTab
             // 
@@ -189,12 +230,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.webBrowser1);
             this.Name = "userControlTab";
             this.Size = new System.Drawing.Size(787, 448);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +260,9 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         public System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

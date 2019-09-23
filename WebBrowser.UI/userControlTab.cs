@@ -21,7 +21,7 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-
+        //Go Button
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(urlBar.ToString());
@@ -33,6 +33,7 @@ namespace WebBrowser.UI
          
         }
 
+        //Enter Key for URL Bar
         private void urlBar_KeyDown(object sender, KeyEventArgs e)
         {
         
@@ -43,15 +44,13 @@ namespace WebBrowser.UI
             }
         }
 
-  
-
-
         //Refresh Button
         private void toolStripButton3_Click(object sender, EventArgs e)
         {   
             webBrowser1.Navigate(urlBar.ToString());
         }
-
+        
+        //Forward Button
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (backStack.Count == 0)
@@ -71,6 +70,7 @@ namespace WebBrowser.UI
             }  
         }
 
+        //Backward Button
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             if (forwardStack.Count == 0)
@@ -87,8 +87,10 @@ namespace WebBrowser.UI
        
         }
 
+        //Add Item to History
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+           
             WebBrowser.Logic.HistoryItem a = new Logic.HistoryItem();
 
             a.URL = urlBar.ToString();
@@ -98,6 +100,7 @@ namespace WebBrowser.UI
             WebBrowser.Logic.HistoryManager.AddHistoryItem(a);
         }
 
+        //Add Bookmark Button
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
             List<WebBrowser.Logic.BookmarkItem> newList = new List<Logic.BookmarkItem>();
@@ -113,6 +116,44 @@ namespace WebBrowser.UI
                 a.url = urlBar.ToString();
                 WebBrowser.Logic.BookmarkManager.AddBookmarkItem(a);
             }
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void WebBrowser1_ProgressChanged(Object sender,
+                                         WebBrowserProgressChangedEventArgs e)
+        {
+            toolStripProgressBar1.Maximum = (int)e.MaximumProgress;
+            toolStripProgressBar1.Value = (int)e.CurrentProgress;
+        }
+
+        private void toolStripProgressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            String google = "www.google.com";
+            webBrowser1.Navigate(google);
+            backStack.Push(urlBar.ToString());
+        }
+
+        private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            toolStripStatusLabel1.Text = "loading";
+            toolStripProgressBar1.MarqueeAnimationSpeed = 30;
+            toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
+        }
+
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            toolStripProgressBar1.MarqueeAnimationSpeed = 0;
+            toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
+            toolStripStatusLabel1.Text = "done";
         }
     }
 }

@@ -14,6 +14,7 @@ namespace WebBrowser.UI
     {
         public mainForm()
         {
+
             InitializeComponent();
         }
 
@@ -79,7 +80,7 @@ namespace WebBrowser.UI
 
         private void userControlTab1_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
