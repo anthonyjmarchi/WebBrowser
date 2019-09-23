@@ -149,11 +149,19 @@ namespace WebBrowser.UI
             toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
         }
 
+        //Navigate (Progress Bar and Mouse Over)
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             toolStripProgressBar1.MarqueeAnimationSpeed = 0;
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             toolStripStatusLabel1.Text = "done";
+            this.webBrowser1.Document.MouseOver += new HtmlElementEventHandler(this.Browser_Mouse_Moved);
+        }
+
+        private void Browser_Mouse_Moved(object sender, HtmlElementEventArgs e)
+        {
+            string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
+            toolStripStatusLabel2.Text = element;
         }
     }
 }
