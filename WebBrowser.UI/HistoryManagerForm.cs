@@ -29,12 +29,47 @@ namespace WebBrowser.UI
 
         private void ProgramViwer_Load(object sender, EventArgs e)
         {
-            foreach (WebBrowser.Logic.HistoryItem item in WebBrowser.Logic.HistoryManager.GetHistoryItems())
+            List<WebBrowser.Logic.HistoryItem> newList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+            foreach (WebBrowser.Logic.HistoryItem item in newList)
             {
                 listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
-            } 
-           
-          
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            List<WebBrowser.Logic.HistoryItem> newList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+            foreach (WebBrowser.Logic.HistoryItem item in newList)
+            {
+                if (textBox1.Text == item.Title)
+                {
+                    listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
+                }
+                else if (textBox1.Text == item.URL)
+                {
+                    listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WebBrowser.Logic.HistoryItem deletedItem = listBox1.SelectedItem as WebBrowser.Logic.HistoryItem;
+
+            historyTableAdapter.Delete(deletedItem.URL, deletedItem.Title, deletedItem.Date);
+
+            List<WebBrowser.Logic.HistoryItem> newList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+            foreach (WebBrowser.Logic.HistoryItem item in newList)
+            {
+                listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
+            }
+            
         }
     }
 }

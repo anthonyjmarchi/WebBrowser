@@ -25,7 +25,7 @@ namespace WebBrowser.Logic
             {
                 var item = new HistoryItem();
 
-                item.Title = row.Title;
+                item.Title = row.Title; 
                 item.URL = row.URL;
                 item.Date = row.Date;
                 results.Add(item);
