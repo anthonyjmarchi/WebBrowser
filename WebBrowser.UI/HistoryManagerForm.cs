@@ -24,7 +24,7 @@ namespace WebBrowser.UI
 
         private void HistoryManagerForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ProgramViwer_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace WebBrowser.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,16 +60,27 @@ namespace WebBrowser.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WebBrowser.Logic.HistoryItem deletedItem = listBox1.SelectedItem as WebBrowser.Logic.HistoryItem;
+            List<WebBrowser.Logic.HistoryItem> aList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
 
-            historyTableAdapter.Delete(deletedItem.URL, deletedItem.Title, deletedItem.Date);
 
-            List<WebBrowser.Logic.HistoryItem> newList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
-            foreach (WebBrowser.Logic.HistoryItem item in newList)
+
+            string URL = aList[listBox1.SelectedIndex].URL;
+            string Title = aList[listBox1.SelectedIndex].Title;
+            DateTime date = aList[listBox1.SelectedIndex].Date;
+            int itemID = aList[listBox1.SelectedIndex].itemID;
+
+            WebBrowser.Logic.HistoryManager.deleteHistoryItem(URL, Title, date, itemID);
+
+            listBox1.Items.Clear();
+
+            List<WebBrowser.Logic.HistoryItem> bList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+           
+            foreach (WebBrowser.Logic.HistoryItem thing in bList)
             {
-                listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
+                listBox1.Items.Add("[" + thing.Date + "]" + " " + thing.URL + " " + "(" + thing.Title + ")");
+           
             }
-            
+
         }
     }
 }
