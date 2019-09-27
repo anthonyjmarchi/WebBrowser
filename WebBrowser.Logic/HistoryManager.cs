@@ -47,6 +47,17 @@ namespace WebBrowser.Logic
 
         }
 
+        public static void deleteAllHistory(List<HistoryItem> deleteAllList)
+        {
+            var adapterFour = new WebBrowser.Data.BrowserDBDataSetTableAdapters.HistoryTableAdapter();
+
+            foreach (HistoryItem entry in deleteAllList)
+            {
+                adapterFour.Delete(entry.itemID, entry.URL, entry.Title, entry.Date);
+            }
+          
+        }
+
     }
 }
 

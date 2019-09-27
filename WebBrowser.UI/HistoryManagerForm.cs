@@ -82,5 +82,13 @@ namespace WebBrowser.UI
             }
 
         }
+
+        //Clear History
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<WebBrowser.Logic.HistoryItem> cList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+            WebBrowser.Logic.HistoryManager.deleteAllHistory(cList);
+            listBox1.Items.Clear();
+        }
     }
 }
