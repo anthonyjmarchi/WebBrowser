@@ -88,6 +88,12 @@ namespace WebBrowser.UI
             BookmarkManager bookmarkFormThing = new BookmarkManager();
             bookmarkFormThing.ShowDialog();
         }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<WebBrowser.Logic.HistoryItem> deleteAllList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
+            WebBrowser.Logic.HistoryManager.deleteAllHistory(deleteAllList);
+        }
     }
 }
 
