@@ -58,11 +58,10 @@ namespace WebBrowser.UI
             }
         }
 
+        //Delete Button
         private void button2_Click(object sender, EventArgs e)
         {
             List<WebBrowser.Logic.HistoryItem> aList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
-
-
 
             string URL = aList[listBox1.SelectedIndex].URL;
             string Title = aList[listBox1.SelectedIndex].Title;

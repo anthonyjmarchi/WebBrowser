@@ -29,6 +29,41 @@ namespace WebBrowser.UI
         {
 
         }
-    
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            List<WebBrowser.Logic.BookmarkItem> newList = new List<WebBrowser.Logic.BookmarkItem>(WebBrowser.Logic.BookmarkManager.GetBookmarkItems());
+            foreach (WebBrowser.Logic.BookmarkItem itemTwo in newList)
+            {
+                if (textBox1.Text == itemTwo.title)
+                {
+                    listBox1.Items.Add(itemTwo.title.ToString().Trim() + " " + "(" + itemTwo.url.ToString().Trim() + ")");
+                }
+                else if (textBox1.Text == itemTwo.url)
+                {
+                    listBox1.Items.Add(itemTwo.title.ToString().Trim() + " " + "(" + itemTwo.url.ToString().Trim() + ")");
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<WebBrowser.Logic.BookmarkItem> dList = new List<WebBrowser.Logic.BookmarkItem>(WebBrowser.Logic.BookmarkManager.GetBookmarkItems());
+
+            int bookmarkID = dList[listBox1.SelectedIndex].bookmarkID;
+            string url = dList[listBox1.SelectedIndex].url.Trim();
+            string title = dList[listBox1.SelectedIndex].title.Trim();
+
+            WebBrowser.Logic.BookmarkManager.deleteBookmark(bookmarkID, title, url);
+
+            listBox1.Items.Clear();
+
+            List<WebBrowser.Logic.BookmarkItem> eList = new List<WebBrowser.Logic.BookmarkItem>(WebBrowser.Logic.BookmarkManager.GetBookmarkItems());
+            foreach (WebBrowser.Logic.BookmarkItem thing in eList)
+            {
+                listBox1.Items.Add(thing.title.ToString().Trim() + " " + "(" + thing.url.ToString().Trim() + ")");
+            }
+        }
     }
 }

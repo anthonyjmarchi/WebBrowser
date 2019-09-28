@@ -52,9 +52,16 @@ namespace WebBrowser.Logic
 
                 item.title = row.Title;
                 item.url = row.URL;
+                item.bookmarkID = row.Id;
                 results.Add(item);
             }
             return results;
+        }
+
+        public static void deleteBookmark(int bookmarkID, string Title, string URL)
+        {
+            var adapterFour = new WebBrowser.Data.BrowserDBDataSetTableAdapters.BookmarkTableAdapter();
+            adapterFour.Delete(bookmarkID, URL, Title);
         }
     }
 }

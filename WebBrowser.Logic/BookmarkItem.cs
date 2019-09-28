@@ -8,6 +8,7 @@ namespace WebBrowser.Logic
 {
     public class BookmarkItem
     {
+        public int bookmarkID { get; set; }
         public string url { get; set; }
         public string title { get; set; }
     }

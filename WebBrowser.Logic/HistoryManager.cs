@@ -10,8 +10,6 @@ namespace WebBrowser.Logic
     public class HistoryManager
     {
 
-      
-
         public static void AddHistoryItem(HistoryItem item)
         {
             var adapter = new WebBrowser.Data.BrowserDBDataSetTableAdapters.HistoryTableAdapter();
