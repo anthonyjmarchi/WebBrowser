@@ -90,7 +90,6 @@ namespace WebBrowser.UI
         //Add Item to History
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-           
             WebBrowser.Logic.HistoryItem a = new Logic.HistoryItem();
 
             a.URL = urlBar.ToString();
@@ -162,6 +161,10 @@ namespace WebBrowser.UI
         {
             string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
             toolStripStatusLabel2.Text = element;
+        }
+
+        public void printPage(object sender, EventArgs e) {
+            webBrowser1.ShowPrintDialog();
         }
     }
 }
