@@ -25,7 +25,7 @@ namespace WebBrowser.UI
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Developed by: \nAnthony Marchi \nParma, Italy \n\nStudent ID: \najm151 ", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult res = MessageBox.Show("Developed by: \nAnthony J. Marchi \nParma, Italy \n\nStudent ID: \najm151 ", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void exitWebBrowserToolStripMenuItem_Click_1(object sender, EventArgs e)
