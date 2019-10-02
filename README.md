@@ -12,5 +12,5 @@ Features include:
 * Clear History
 * Search History
 * Ability to Print Page
-*
+
 
