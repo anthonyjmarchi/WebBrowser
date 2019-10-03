@@ -20,11 +20,6 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-            public userControlTab(WebBrowser a)
-        {
-
-        }
-
         //Go Button
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
