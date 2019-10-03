@@ -36,7 +36,7 @@ namespace WebBrowser.UI
             List<WebBrowser.Logic.BookmarkItem> newList = new List<WebBrowser.Logic.BookmarkItem>(WebBrowser.Logic.BookmarkManager.GetBookmarkItems());
             foreach (WebBrowser.Logic.BookmarkItem itemTwo in newList)
             {
-                if (textBox1.Text == itemTwo.title)
+                if (textBox1.Text.Trim().ToLower() == itemTwo.title.Trim().ToLower())
                 {
                     listBox1.Items.Add(itemTwo.title.ToString().Trim() + " " + "(" + itemTwo.url.ToString().Trim() + ")");
                 }

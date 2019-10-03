@@ -47,11 +47,11 @@ namespace WebBrowser.UI
             List<WebBrowser.Logic.HistoryItem> newList = new List<WebBrowser.Logic.HistoryItem>(WebBrowser.Logic.HistoryManager.GetHistoryItems());
             foreach (WebBrowser.Logic.HistoryItem item in newList)
             {
-                if (textBox1.Text == item.Title)
+                if (textBox1.Text.ToLower() == item.Title.ToLower())
                 {
                     listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
                 }
-                else if (textBox1.Text == item.URL)
+                else if (textBox1.Text.ToLower() == item.URL.ToLower())
                 {
                     listBox1.Items.Add("[" + item.Date + "]" + " " + item.URL + " " + "(" + item.Title + ")");
                 }
