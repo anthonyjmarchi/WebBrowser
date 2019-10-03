@@ -16,11 +16,12 @@ namespace WebBrowser.UI
         {
 
             InitializeComponent();
+       
         }
-
+        
         private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+        
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace WebBrowser.UI
 
         }
 
+        //Control T for New Tab
         private void mainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.T)
@@ -80,7 +82,7 @@ namespace WebBrowser.UI
 
         private void userControlTab1_Load(object sender, EventArgs e)
         {
-        
+            
         }
 
         private void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,10 +97,21 @@ namespace WebBrowser.UI
             WebBrowser.Logic.HistoryManager.deleteAllHistory(deleteAllList);
         }
 
+        //Print Page
         private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            userControlTab1.webBrowser1.ShowPrintDialog();
+            userControlTab f = new userControlTab();
+            f.webBrowser1.ShowPrintDialog();
         }
+
+        //Save Page As HTML
+        private void savePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userControlTab g = new userControlTab();
+            g.webBrowser1.ShowSaveAsDialog();
+        }
+
+        
     }
 }
 

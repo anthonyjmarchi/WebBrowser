@@ -15,11 +15,11 @@ namespace WebBrowser.UI
         public Stack<string> backStack = new Stack<string>();
         public Stack<string> forwardStack = new Stack<string>();
         
-        
             public userControlTab()
         {
             InitializeComponent();
         }
+        
 
         //Go Button
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -41,6 +41,9 @@ namespace WebBrowser.UI
             {
                 webBrowser1.Navigate(urlBar.ToString());
                 backStack.Push(urlBar.ToString());
+                TabPage a = new TabPage();
+                a.Text = webBrowser1.DocumentTitle;
+               
             }
         }
 
@@ -91,12 +94,11 @@ namespace WebBrowser.UI
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             WebBrowser.Logic.HistoryItem a = new Logic.HistoryItem();
-
             a.URL = urlBar.ToString();
             a.Title = webBrowser1.DocumentTitle;
             a.Date = DateTime.Now;
-
             WebBrowser.Logic.HistoryManager.AddHistoryItem(a);
+            
         }
 
         //Add Bookmark Button
@@ -122,6 +124,7 @@ namespace WebBrowser.UI
            
         }
 
+        //Progress Bar
         private void WebBrowser1_ProgressChanged(Object sender,
                                          WebBrowserProgressChangedEventArgs e)
         {
@@ -155,16 +158,13 @@ namespace WebBrowser.UI
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             toolStripStatusLabel1.Text = "done";
             this.webBrowser1.Document.MouseOver += new HtmlElementEventHandler(this.Browser_Mouse_Moved);
+
         }
 
         private void Browser_Mouse_Moved(object sender, HtmlElementEventArgs e)
         {
             string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
             toolStripStatusLabel2.Text = element;
-        }
-
-        public void printPage(object sender, EventArgs e) {
-            webBrowser1.ShowPrintDialog();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace WebBrowser.Logic
             foreach(var row in rows)
             {
                 var item = new HistoryItem();
-
+                
               
                 item.Title = row.Title; 
                 item.URL = row.URL;
