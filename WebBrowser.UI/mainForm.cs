@@ -100,18 +100,16 @@ namespace WebBrowser.UI
         //Print Page
         private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            userControlTab f = new userControlTab();
-            f.webBrowser1.ShowPrintDialog();
+            userControlTab1.webBrowser1.ShowPrintPreviewDialog();
         }
+
+
 
         //Save Page As HTML
         private void savePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            userControlTab g = new userControlTab();
-            g.webBrowser1.ShowSaveAsDialog();
+            userControlTab1.webBrowser1.ShowSaveAsDialog();
         }
-
-        
     }
 }
 

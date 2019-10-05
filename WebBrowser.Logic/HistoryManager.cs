@@ -39,10 +39,8 @@ namespace WebBrowser.Logic
 
         public static void deleteHistoryItem(string URL, string Title, DateTime date, int itemID)
         {
-            
             var adapterThree = new WebBrowser.Data.BrowserDBDataSetTableAdapters.HistoryTableAdapter();
             adapterThree.Delete(itemID, URL, Title, date);
-
         }
 
         public static void deleteAllHistory(List<HistoryItem> deleteAllList)

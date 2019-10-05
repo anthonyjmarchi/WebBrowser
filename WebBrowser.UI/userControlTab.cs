@@ -165,5 +165,7 @@ namespace WebBrowser.UI
             string element = webBrowser1.Document.GetElementFromPoint(e.ClientMousePosition).GetAttribute("href");
             toolStripStatusLabel2.Text = element;
         }
+
+        
     }
 }
