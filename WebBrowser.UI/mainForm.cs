@@ -42,6 +42,7 @@ namespace WebBrowser.UI
             tabControl1.TabPages.Add(newPage);
             newPage.Controls.Add(a);
             tabControl1.SelectedTab = newPage;
+
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
